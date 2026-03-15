@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HealthGuard AI{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+ <!-- Enhanced Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+             <img src="{{ url_for('static', filename='icons/logo.png') }}" alt="symptom-checker icon">      
+              
+            <span>HealthGuard AI</span>
+            </a>
+
+            <!-- <a href="#" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                MedalyZe
+            </a> -->
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                     <a href="/BMI" class="nav-link">
+                        <i class="fas fa-weight"></i>BMI checker</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Doctor" class="nav-link">
+                        <i class="fas fa-user-md"></i> Doctors
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Contact" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#appointment" class="nav-link cta-button">
+                        <i class="fas fa-calendar-plus"></i> Book Now
+                    </a>
+                </li> -->
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+   {% block content %}
+   
+
+    {% endblock %}
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-heartbeat"></i> HealthGuard AI</h3>
+                    <p style="color: #bdc3c7; margin-bottom: 1.5rem;">Your trusted partner in healthcare. We connect patients with qualified medical professionals, making healthcare accessible and convenient for everyone.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="/BMI"><i class="fas fa-weight"></i>bmi calculator</a></li>
+                        <li><a href="/Doctor"><i class="fas fa-user-md"></i> Find Doctors</a></li>
+                        <!-- <li><a href="#appointment"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li> -->
+                        <li><a href="/about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="/Contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services
+                <div class="footer-section">
+                    <h3>Medical Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-heartbeat"></i> Cardiology</a></li>
+                        <li><a href="#"><i class="fas fa-brain"></i> Neurology</a></li>
+                        <li><a href="#"><i class="fas fa-bone"></i> Orthopedics</a></li>
+                        <li><a href="#"><i class="fas fa-eye"></i> Ophthalmology</a></li>
+                        <li><a href="#"><i class="fas fa-child"></i> Pediatrics</a></li>
+                        <li><a href="#"><i class="fas fa-female"></i> Gynecology</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- Contact & Newsletter -->
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Shaitan Gali, Khatra Mehel, Andar Nagar, Medical District, pin-171469</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+919999XXX888</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@HealthGuardAI.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Emergency Support</span>
+                        </div>
+                    </div>
+                </div>
+                    <div class="newsletter">
+                        <h4 style="color: #4ecdc4; margin-bottom: 0.5rem;">Stay Updated</h4>
+                        <p>Subscribe to our newsletter for health tips and updates.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 HealthGuard AI. All rights reserved. | Connecting Health, Connecting Lives</p>
+                    </div>
+                    <ul class="footer-bottom-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+   
+ 
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+</body>
+</html>

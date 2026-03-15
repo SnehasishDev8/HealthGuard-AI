@@ -1,0 +1,183 @@
+  {% extends 'base.html' %}
+   {% block title %}Home - Health Guard AI{% endblock %}
+
+  {% block content %}
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="symptom-checker" class="hero-section">
+            <div class="hero-image">
+            <img src="{{ url_for('static', filename='icons/custom_icon.svg') }}   " alt="symptom-checker icon" class="medical-icon-img">
+            </div>
+            <div class="hero-content">
+                <h1>Symptom Checker</h1>
+                <p>Enter your symptoms and get personalized health information instantly</p>
+                <button class="cta-button" onclick="openSymptomChecker()">
+                    Start Symptom Checker
+                </button>
+            </div>
+            
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍
+                    </div>
+                    <h3>Smart Analysis</h3>
+                    <p>Advanced AI-powered symptom analysis for accurate health insights</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Results</h3>
+                    <p>Get immediate feedback and recommendations for your symptoms</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Private & Secure</h3>
+                    <p>Your health information is completely private and secure</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Enter Symptoms</h3>
+                    <p>Describe your symptoms in detail</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI analyzes your symptoms</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Results</h3>
+                    <p>Receive personalized recommendations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+               <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is a symptom checker ?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A symptom checker is a tool that allows users to enter symptoms, as well as other medical and demographic information, to get a list of possible medical conditions. Symptom checkers can be used as a starting point to get a medical diagnosis from a doctor. Whether you have a sore throat, an itch, a bad case of sneezes, abdominal pain, or fatigue, you can enter these common symptoms to explore their potential causes.</p>
+                    </div>
+                </div> 
+                <div class="faq-item">
+                    <button class="faq-question" >
+                        <span>How does the symptom checker work?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>While it’s not a substitute for professional medical advice, you can get a better idea of what might be causing that sore throat or abdominal pain. Our symptom checker utilizes sophisticated natural language processing software that is applied to a medical database of disease information consisting of thousands of different health conditions. You’ll be asked to enter your symptoms using everyday language and answer a few basic questions about your health, age, sex, and location. The combination of symptoms and health information is analyzed by an enhanced machine learning model that produces a list of possible matching conditions, such as the flu or many other ailments. You can then research those conditions and locate doctors to help diagnose and treat them.</p>
+                    </div>
+                </div>
+               
+                 <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How accurate is the symptom checker?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our symptom checker uses advanced AI algorithms trained on medical data. However, it should not replace professional medical advice. Always consult with a healthcare provider for proper diagnosis.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" >
+                        <span>Is my health information secure?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we take privacy seriously. All health information is encrypted and stored securely. We never share your personal health data with third parties.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <button class="faq-question" >
+                        <span>Do I still need to see a doctor after using a symptom checker?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A symptom checker is not a substitute for seeing a doctor. It is a tool to help gather information and determine what type of doctor to see in order to have a more productive visit with the goal of getting the correct diagnosis sooner. Whether that’s intense cramps from a menstrual period or a case of COVID-19, our symptom checking tool can help.
+                        <br>
+                        <br>
+                        One study reported that for people living with a rare disease, it takes an average of nearly 5 years between onset of symptoms and correct diagnosis. In that time, they see an average of over 7 physicians each. And over half of patients agreed with the statement, “Because of a slow diagnosis, treatment was delayed and the impact on my condition has been negative.” MediFind aims to speed up the process of finding the correct diagnosis with the help of your physician.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" >
+                        <span>Can I use this for emergency situations?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. The Health Guard AI symptom checker is not intended for use in medical emergencies. If you are experiencing severe symptoms such as chest pain, difficulty breathing, heavy bleeding, or signs of a stroke, please call emergency services immediately or go to the nearest emergency room. This tool is designed for general informational purposes only and should not be used as a substitute for emergency medical care.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" >
+                        <span>Do I need to create an account?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No account is required to use our basic symptom checker. However, creating an account allows you to save your symptom history and get personalized recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <div class="center-wrapper fade-in-up">
+             <div class="contact-section">
+                 <h2 class="contact-heading">Still have questions?</h2>
+                <!-- <p class="contact-subtext">We're here to help. Reach out to our team anytime.</p> -->
+                <a href="/contact" class="contact-btn">Contact Us </a>
+             </div>
+         </div>
+    </main>
+
+    <!-- Symptom Checker Modal -->
+    <div id="symptomModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Symptom Checker</h2>
+                <button class="modal-close" onclick="closeSymptomChecker()">&times;</button>
+            </div>
+        <div class="modal-body">
+                <div class="symptom-input-section">
+                    <label for="symptomInput">Enter your symptoms:</label>
+                    <div class="input-group">
+                        <input type="text" id="symptomInput" placeholder="e.g., headache, fever, cough">
+                        <button onclick="addSymptom()">Add</button>
+                    </div>
+                    <div id="symptomTags" class="symptom-tags"></div>
+                </div>
+                <button id="analyzeBtn"  onclick="analyzeSymptoms()" disabled class="btn-primary" disabled>
+                    Analyze Symptoms
+                </button>
+                <div id="aiDiseaseInfo" style="display: none; margin-top: 20px; background: #f9f9f9; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <!-- Filled dynamically by script.js -->
+            </div>
+
+                <!-- <div id="aiDiseaseInfo" class="ai-disease-info" style="display: none;"></div> -->
+                <!-- <div id="analysisResults" class="analysis-results" style="display: none;"> -->
+                    <h3>Possible Conditions:</h3>
+                    <div id="conditionsList" class="conditions-list"></div>
+                    <div class="disclaimer-box">
+                        <p><strong>⚠️ Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice. Please consult with a healthcare provider for proper diagnosis and treatment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   {% endblock %}

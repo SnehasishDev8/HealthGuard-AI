@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .bmi-page {
+        min-height: 50vh;
+        background-color: #f5f5f5;
+        padding-top: 100px;
+        font-family: sans-serif;
+    }
+
+    .bmi-box {
+        max-width: 500px;
+        margin: auto;
+        background-color: #2d2d2d;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        color: #fff;
+        text-align: center;
+    }
+
+    .bmi-box h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #4ecdc4;
+    }
+
+    .bmi-box .text {
+        text-align: left;
+        margin: 10px 0 5px;
+    }
+
+    .bmi-box input, .bmi-box select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #444;
+        color: #fff;
+    }
+
+    .bmi-box button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        background-color: #34a853;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .bmi-box button:hover {
+        background-color: #2c8a44;
+    }
+
+    #bmi-output {
+        margin-top: 20px;
+        display: none; /* Hide initially */
+    }
+
+    .bmi-value {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .bmi-category, .bmi-description {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .bmi-scale {
+        margin-top: 20px;
+        background-color: #383838;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 15px;
+        display: none;
+    }
+</style>
+
+<div class="bmi-page">
+    <div class="bmi-box">
+        <h2>BMI Calculator</h2>
+        
+        <p class="text">Gender</p>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <p class="text">Height (cm)</p>
+        <input type="text" id="height">
+
+        <p class="text">Weight (kg)</p>
+        <input type="text" id="weight">
+
+        <button onclick="bmi()">Calculate </button>
+
+        <div id="bmi-output">
+            <div class="bmi-value" id="bmi-value"></div>
+            <div class="bmi-category" id="bmi-category"></div>
+            <div class="bmi-description" id="bmi-description"></div>
+        </div>
+
+        <div class="bmi-scale">
+            <strong>BMI Categories:</strong><br>
+            Underweight: Below 18.5<br>
+            Normal weight: 18.5 – 24.9<br>
+            Overweight: 25.0 – 29.9<br>
+            Obese: 30.0 and above
+        </div>
+    </div>
+</div>
+
+<script>
+function bmi() {
+    let height = parseFloat(document.getElementById('height').value);
+    let weight = parseFloat(document.getElementById('weight').value);
+    let output = document.getElementById('bmi-output');
+    let scale = document.querySelector('.bmi-scale');
+
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        output.style.display = 'block';
+        scale.style.display = 'none';
+        document.getElementById('bmi-value').innerText = "❌ Invalid input!";
+        document.getElementById('bmi-category').innerText = "";
+        document.getElementById('bmi-description').innerText = "";
+        return;
+    }
+
+    let bmi = weight / ((height / 100) ** 2);
+    let bmiResult = bmi.toFixed(2);
+    let category = '';
+    let description = '';
+
+    if (bmi < 18.5) {
+        category = 'Underweight';
+        description = 'Your BMI indicates you are under the healthy weight range.';
+    } else if (bmi < 25) {
+        category = 'Normal Weight';
+        description = 'Your BMI indicates a healthy weight range.';
+    } else if (bmi < 30) {
+        category = 'Overweight';
+        description = 'Your BMI indicates you are above the normal range.';
+    } else {
+        category = 'Obese';
+        description = 'Your BMI indicates you are in the obese range.';
+    }
+
+    output.style.display = 'block';
+    scale.style.display = 'block';
+    document.getElementById('bmi-value').innerText = `✅ Your BMI is ${bmiResult}`;
+    document.getElementById('bmi-category').innerText = `Category: ${category}`;
+    document.getElementById('bmi-description').innerText = description;
+}
+</script>
+
+
+{% endblock %}

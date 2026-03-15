@@ -1,0 +1,20 @@
+=== Disease Prediction Model Report ===
+
+Dataset: data/decease.csv
+Samples: 478
+Unique diseases: 49
+Avg symptom length: 5.83
+
+Top diseases:
+Disease
+Asthma          10
+Hypertension    10
+COVID-19        10
+Dengue          10
+Tuberculosis    10
+Typhoid         10
+Malaria         10
+Migraine        10
+Hepatitis B     10
+Chickenpox      10
+Name: count, dtype: int64

@@ -1,0 +1,27 @@
+Doctor_Name,Specialty,Area,Address,Contact_No,Clinic_Hospital,Days_Available,Time_Slot,Rating,Latitude,Longitude
+Dr. Anirban Sen,Cardiologist,Ballygunge,"12 AJC Bose Road, Kolkata",9876543210,Fortis Hospital,"Mon, Wed, Fri",10:00-13:00,4.7,22.526,88.365
+Dr. Meena Das,Cardiologist,Salt Lake,"23 Salt Lake, Kolkata",9876543222,Apollo Gleneagles,"Tue, Thu, Sat",11:00-14:00,4.6,22.579,88.412
+Dr. Rajiv Ghosh,Dermatologist,Park Street,"7 Park Street, Kolkata",9876543330,Belle Vue Clinic,Mon-Fri,15:00-18:00,4.5,22.552,88.363
+Dr. Sneha Pal,Dermatologist,Howrah,"10 Howrah Maidan, Kolkata",9876543440,Howrah Skin Center,"Mon, Wed, Fri",10:00-13:00,4.4,22.595,88.263
+Dr. Kaustav Roy,Neurologist,Dumdum,"14 Jessore Rd, Kolkata",9876543550,Neuro Clinic,"Tue, Thu, Sat",09:00-12:00,4.8,22.619,88.42
+Dr. Tanushree Bose,Neurologist,New Town,"3 Action Area, New Town",9876543660,Tata Medical,"Mon, Wed, Fri",14:00-17:00,4.7,22.595,88.479
+Dr. Suman Ghosh,Pediatrician,Behala,"22 Behala, Kolkata",9876543770,Child Care Center,Mon-Sat,11:00-14:00,4.6,22.485,88.308
+Dr. Arpita Mitra,Pediatrician,Garia,18 Garia Station Rd,9876543880,Sunshine Hospital,"Tue, Thu, Sat",10:00-13:00,4.5,22.459,88.39
+Dr. Indranil Saha,Orthopedic Surgeon,Tollygunge,5 Tollygunge Rd,9876543990,Bone and Joint,"Mon, Wed, Fri",16:00-19:00,4.7,22.493,88.345
+Dr. Nabanita Das,Orthopedic Surgeon,Kasba,Kasba Main Rd,9876543110,AMRI Hospital,"Tue, Thu, Sat",09:00-12:00,4.6,22.516,88.389
+Dr. Arindam Dey,Ophthalmologist,Shyambazar,"Shyambazar, Kolkata",9876543221,Vision Plus,Mon-Fri,10:00-13:00,4.8,22.606,88.377
+Dr. Rituparna Roy,Ophthalmologist,Jadavpur,"9 Jadavpur, Kolkata",9876543332,Eye Care Clinic,"Tue, Thu",14:00-17:00,4.7,22.495,88.37
+Dr. Niladri Sinha,ENT Specialist,Maniktala,"Maniktala, Kolkata",9876543443,ENT Point,"Mon, Wed, Fri",12:00-15:00,4.5,22.579,88.37
+Dr. Piyali Sarkar,ENT Specialist,Barasat,Near Kalyani More,9876543554,Barasat ENT Clinic,"Tue, Thu",10:00-13:00,4.4,22.688,88.447
+Dr. Soham Dutta,Dentist,Lake Gardens,"Lake Gardens, Kolkata",9876543665,Smile Dental,Mon-Sat,11:00-14:00,4.6,22.504,88.345
+Dr. Sweta Sen,Dentist,Baguiati,Baguiati Main Rd,9876543776,Sparkle Dental,"Mon, Wed, Fri",16:00-19:00,4.5,22.619,88.431
+Dr. Ananya Banerjee,Gastroenterologist,Sealdah,"Sealdah Rd, Kolkata",9876543887,Gut Health Clinic,"Tue, Thu",10:00-13:00,4.6,22.567,88.368
+Dr. Rajesh Prasad,Gastroenterologist,Kankurgachi,"Kankurgachi, Kolkata",9876543998,Stomach Care Center,"Mon, Wed, Fri",15:00-18:00,4.5,22.576,88.391
+Dr. Soma Chatterjee,Psychiatrist,Rajarhat,"Rajarhat Rd, Kolkata",9876543119,MindSpace,"Mon, Wed, Fri",09:00-12:00,4.7,22.609,88.48
+Dr. Debraj Dutta,Psychiatrist,Lake Town,"Lake Town, Kolkata",9876543220,Serenity Clinic,"Tue, Thu",14:00-17:00,4.6,22.608,88.403
+Dr. Aditya Sen,Pulmonologist,Ultadanga,Ultadanga Main Rd,9876543331,Breathe Well,"Mon, Wed, Fri",11:00-14:00,4.5,22.595,88.401
+Dr. Shalini Gupta,Pulmonologist,New Alipore,New Alipore Ave,9876543442,Airways Clinic,"Tue, Thu",16:00-19:00,4.4,22.508,88.324
+Dr. Anil Khatri,Endocrinologist,Taltala,"Taltala, Kolkata",9876543553,Hormone Care,"Mon, Wed, Fri",10:00-13:00,4.6,22.564,88.365
+Dr. Priya Mukherjee,Endocrinologist,Dunlop,Dunlop Area,9876543664,ThyroClinic,"Tue, Thu",11:00-14:00,4.5,22.657,88.372
+Dr. Sunita Rani,Gynecologist,Kalighat,Kalighat Rd,9876543775,WomenCare,"Mon, Wed, Fri",10:00-13:00,4.7,22.522,88.339
+Dr. Koushik Lahiri,Gynecologist,Bidhannagar,Bidhannagar Sector 1,9876543886,Mother's Health,"Tue, Thu",15:00-18:00,4.6,22.585,88.415

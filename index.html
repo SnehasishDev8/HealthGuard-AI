@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+   {% block title %}Doctor - HealthGuard AI {% endblock %}
+  {% block content %}
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Find the Right Doctor</h1>
+                <p>Enter your symptoms and we'll recommend qualified doctors in Kolkata who can help you get the care you need.</p>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-user-doctor medical-icon"></i>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <h2>What symptoms are you experiencing?</h2>
+            <form class="search-form" onsubmit="searchDoctors(event)">
+               <input type="text" class="search-input" id="symptomInput" placeholder="Enter symptom, disease or specialty (e.g., fever, diabetes, cardiologist)" required>
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i> Find Doctors
+                </button>
+            </form>
+            <div class="quick-symptoms">
+                <p>Or try these common symptoms:</p>
+                <div class="symptom-chips">
+                    <span class="symptom-chip" onclick="quickSearch('chest pain')">Chest Pain</span>
+                    <span class="symptom-chip" onclick="quickSearch('skin rash')">Skin Rash</span>
+                    <span class="symptom-chip" onclick="quickSearch('fever')">Fever</span>
+                    <span class="symptom-chip" onclick="quickSearch('headache')">Headache</span>
+                    <span class="symptom-chip" onclick="quickSearch('back pain')">Back Pain</span>
+                    <span class="symptom-chip" onclick="quickSearch('eye pain')">Eye Pain</span>
+                    <span class="symptom-chip" onclick="quickSearch('cough')">Cough</span>
+                    <span class="symptom-chip" onclick="quickSearch('diabetes')">Diabetes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Section -->
+        <section class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Finding the best doctors for your symptoms...</p>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="results">
+            <div class="results-header">
+                <h2 id="resultsTitle">Recommended Doctors</h2>
+                <p id="resultsSubtitle">Based on your symptoms</p>
+            </div>
+            <div class="results-container">
+                <div id="doctorsList"></div>
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No doctors found</h3>
+                    <p>Try searching with different terms or contact our support team for assistance.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+<script>
+  async function searchDoctors(event) {
+    event.preventDefault();
+    const symptom = document.getElementById("symptomInput").value;
+    const loading = document.getElementById("loading");
+    const resultsSection = document.getElementById("results");
+    const doctorList = document.getElementById("doctorsList");
+    const noResults = document.getElementById("noResults");
+
+    loading.style.display = "block";
+    resultsSection.style.display = "none";
+    noResults.style.display = "none";
+
+    const response = await fetch("/api/doctors", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ symptom })
+    });
+
+    const data = await response.json();
+    loading.style.display = "none";
+    doctorList.innerHTML = "";
+
+    if (data.length) {
+      resultsSection.style.display = "block";
+      data.forEach(doc => {
+        doctorList.innerHTML += `
+          <div class="doctor-card">
+            <h3>${doc.Doctor_Name}</h3>
+            <p><strong>Specialty:</strong> ${doc.Specialty}</p>
+            <p><strong>Clinic:</strong> ${doc.Clinic_Hospital}</p>
+            <p><strong>Area:</strong> ${doc.Area}</p>
+            <p><strong>Contact:</strong> ${doc.Contact_No}</p>
+            <p><strong>Available:</strong> ${doc.Days_Available} at ${doc.Time_Slot}</p>
+          </div>
+        `;
+      });
+    } else {
+      noResults.style.display = "block";
+    }
+  }
+
+  function quickSearch(symptom) {
+    document.getElementById("symptomInput").value = symptom;
+  }
+</script>
+{% endblock %}
